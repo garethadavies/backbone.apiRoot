@@ -49,6 +49,42 @@ var Collection = Backbone.Collection.extend({
 
 This **replaces** the regular 'url' collection property and is a reference to the section of the api rest pattern that is unique to the particular collection, e.g. A list of users is requested from 'http://api.website.com/users', will now simply be 'users'.
 
+### Example
+
+```js
+var Model = Backbone.Model.extend({
+
+  urlRoot: 'users',
+
+  idAttribute: 'id'
+
+});
+
+var Collection = Backbone.Collection.extend({
+
+	model: Model,
+
+	// Make sure this is set
+  urlSource: 'users'
+
+});
+
+// Create our collection
+var myCollection = new Collection();
+
+// Fetch the data
+myCollection.fetch();
+
+// Create our model
+var myModel = new Model();
+
+// Set the id of the model
+myModel.set({ id: 321 });
+
+// Fetch the data
+myModel.fetch();
+```
+
 Changelog
 ---------
 

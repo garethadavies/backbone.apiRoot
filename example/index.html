@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone API Root</title>
+	</head>
+
+	<body>
+
+		<script src="scripts/vendor/jquery-1.8.3.min.js"></script>
+		<script src="scripts/vendor/underscore-1.4.4.min.js"></script>
+		<script src="scripts/vendor/backbone-1.0.0.min.js"></script>
+
+		<script>
+
+			$(function() {
+
+				// Set your data source
+				Backbone.apiRoot = 'http://api.website.com/';
+
+			});
+
+		</script>
+
+		<script src="../backbone.apiRoot.js"></script>
+
+		<script>
+
+			$(function() {
+
+				/*
+				Example 1
+				*/
+
+				var Model = Backbone.Model.extend({
+
+				  urlRoot: 'users',
+
+				  idAttribute: 'id'
+
+				});
+
+				var Collection = Backbone.Collection.extend({
+
+					model: Model,
+
+					// Make sure this is set
+				  urlSource: 'users'
+
+				});
+
+				// Create our collection
+				var myCollection = new Collection();
+
+				// Fetch the data
+				myCollection.fetch();
+
+				// Create our model
+				var myModel = new Model();
+
+				// Set the id of the model
+				myModel.set({ id: 321 });
+
+				// Fetch the data
+				myModel.fetch();
+
+				/*
+				Example 2
+				*/
+
+				var Model2 = Backbone.Model.extend({
+
+				  urlRoot: 'events',
+
+				  idAttribute: 'id'
+
+				});
+
+				var Collection2 = Backbone.Collection.extend({
+
+					model: Model2,
+
+					// Make sure this is set
+				  urlSource: 'events'
+
+				});
+
+				// Create our collection
+				var myCollection2 = new Collection2();
+
+				// Fetch the data
+				myCollection2.fetch();
+
+				// Create our model
+				var myModel2 = new Model2();
+
+				// Set the id of the model
+				myModel2.set({ id: 123 });
+
+				// Fetch the data
+				myModel2.fetch();
+
+			});
+
+		</script>
+
+	</body>
+</html>
