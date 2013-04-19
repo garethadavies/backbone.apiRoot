@@ -8,8 +8,9 @@ Version currently live: **v0.1.0**
 Requirements
 ------------
 
-* Backbone - http://backbonejs.org
-* Underscore - http://underscorejs.com
+* jQuery (1.8.3) - http://backbonejs.org
+* Backbone (1.0.0) - http://backbonejs.org
+* Underscore (1.4.4) - http://underscorejs.com
 
 Getting up and running
 ----------------------
@@ -21,7 +22,7 @@ Getting up and running
 
 ### Reference the script
 
-This script requires Backbone and Underscore, so make sure you reference it after those files.
+This script requires jQuery, Backbone and Underscore, so make sure you add it after those files.
 
 ```js
 <script src="path/to/file/backbone.apiRoot.min.js"></script>
