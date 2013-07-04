@@ -44,8 +44,12 @@ Author(s):
 
     url: function() {
 
-			// Return the url based on the apiRoot and collection's urlSource property
-			return Backbone.apiRoot + this.constructor.prototype.urlSource;
+      var
+      proto = this.constructor.prototype,
+      urlSource = (_.isFunction(proto.urlSource)) ? proto.urlSource() : proto.urlSource;
+
+      // Return the url based on the apiRoot and collection's urlSource property
+      return Backbone.apiRoot + urlSource;
 
     }
 

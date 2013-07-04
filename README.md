@@ -8,7 +8,7 @@ Version currently live: **v0.1.0**
 Requirements
 ------------
 
-* jQuery (1.8.3) - http://backbonejs.org
+* jQuery (1.8.3) - http://jquery.com
 * Backbone (1.0.0) - http://backbonejs.org
 * Underscore (1.4.4) - http://underscorejs.com
 
