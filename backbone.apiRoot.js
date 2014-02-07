@@ -1,5 +1,5 @@
 /*
-Backbone Datasource v0.1.0
+Backbone Datasource v1.0.0
 Extends Backbone Model and Collection and sets the url via a pre-defined dataSource root
 */
 
@@ -11,7 +11,7 @@ Contents:
   * Extend Backbone Model
   * Extend Backbone Collection
 Author(s):
-  * Gareth Davies @garethadavies
+  * Gareth Davies @GarethDavies_Me
 */
 
 ;(function(window, document, Backbone, _, undefined) {
@@ -29,8 +29,16 @@ Author(s):
 
     url: function() {
 
+      // Set the api root defaults
+      _.defaults(Backbone.apiRoot, {
+
+        root: '/',
+        dataType: ''
+
+      });
+
 			// Return the url based on the apiRoot and model's url
-			return Backbone.apiRoot + this.urlReference();
+			return Backbone.apiRoot + this.urlReference() + Backbone.apiRoot.dataType;
 
     }
 
@@ -49,7 +57,7 @@ Author(s):
       urlSource = (_.isFunction(proto.urlSource)) ? proto.urlSource() : proto.urlSource;
 
       // Return the url based on the apiRoot and collection's urlSource property
-      return Backbone.apiRoot + urlSource;
+      return Backbone.apiRoot.root + urlSource + Backbone.apiRoot.dataType;
 
     }
 
