@@ -38,7 +38,7 @@ Author(s):
       });
 
 			// Return the url based on the apiRoot and model's url
-			return Backbone.apiRoot + this.urlReference() + Backbone.apiRoot.dataType;
+			return Backbone.apiRoot.root + this.urlReference() + Backbone.apiRoot.dataType;
 
     }
 

@@ -32,7 +32,7 @@ You will need to define your api root within your app before any models or colle
 Backbone.apiRoot = {
 
 	root: 'http://api.website.com/', // Default: '/'
-	dataType: '.json' // Optional
+	dataType: '.json' // Optional - Default: ''
 
 };
 ```
